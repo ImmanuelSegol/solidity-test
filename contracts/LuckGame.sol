@@ -16,7 +16,7 @@ contract LuckGame {
 
   modifier checkParticipantsBalace {
         require(
-            msg.value == 1 ether,
+            msg.value > 1 ether,
             "participant must add enough funds."
         );
         _;
