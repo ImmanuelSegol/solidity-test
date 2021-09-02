@@ -14,7 +14,7 @@ contract LuckGame {
         
   }
 
-  modifier checkParticipantsBalace {
+  modifier checkParticipantsBalance {
         require(
             msg.value > 1 ether,
             "participant must add enough funds."
@@ -22,7 +22,7 @@ contract LuckGame {
         _;
     }
 
-  function joinGame(uint luckyNumber, address payable payoutAddress) payable public checkParticipantsBalace {
+  function joinGame(uint luckyNumber, address payable payoutAddress) payable public checkParticipantsBalance {
         participants[count] = Participant(payoutAddress, luckyNumber);
         count++;
         if (count == 2) endGame();
